@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suratan</title>
+
+    <!-- fonts google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- tailwind css -->
+    <link rel="stylesheet" href="../assets/dist/main.css">
+    <link rel="stylesheet" href="../assets/dist/style.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.2/dropzone.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.2/min/dropzone.min.js"></script>
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+    <link rel="stylesheet" href="../node_modules/dropify/dist/css/dropify.css">
+    <!-- <link rel="stylesheet" href="../node_modules/dropify/dist/fonts/dropify.woff"> -->
+    <!-- <link rel="stylesheet" href="/node_modules/air-datepicker/air-datepicker.css"> -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.3/basic.min.css"
+        integrity="sha512-MeagJSJBgWB9n+Sggsr/vKMRFJWs+OUphiDV7TJiYu+TNQD9RtVJaPDYP8hA/PAjwRnkdvU+NsTncYTKlltgiw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.3/dropzone.min.js"></script>
+
+    <!-- phospor -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <script src="//unpkg.com/alpinejs" defer></script>
+
+    <link rel="stylesheet" href="/node_modules/pickadate.js/lib/themes/classic.css">
+    <link rel="stylesheet" href="/node_modules/pickadate.js/lib/themes/classic.date.css">
+</head>
+
+<body class="bg-background">
+    <!-- nav -->
+    <nav class="px-10 py-6  fixed top-0 left-0 right-0 bg-white z-50">
+        <div class="w-full flex justify-between">
+
+            <div class="flex-1">
+                <div class="flex gap-x-32 flex-1">
+                    <div class="logo text-center ">
+                        <h1 class="text-3xl text-black font-bold">Suratan</h1>
+                    </div>
+                    <form action="">
+                        <div class="bg-blue-50 w-[400px] px-4 flex items-center rounded-lg">
+                            <label for="searchbar"><i class="ph ph-magnifying-glass  text-darkGrey"
+                                    style="font-size: 28px;"></i></label>
+                            <input type="search" name="searchbar" id="searchbar"
+                                class="w-full bg-blue-50 placeholder:text-darkGrey ps-3 h-10 focus:outline-none rounded-e-xl"
+                                placeholder="Search">
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="flex items-center gap-3">
+                <div class="profile w-10 h-10 rounded-full bg-slate-400 bg-cover bg-center bg-no-repeat"
+                    style="background-image: url(https://source.unsplash.com/featured?profile);"></div>
+                <div class="text-lg font-semibold flex items-center gap-1">Admin <i class="fa fa-angle-down fa-xs"></i>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- nav end -->
+    <section class="flex relative">
+        <!-- sidebar -->
+        <aside id="sidebar" class="w-[250px] py-6 px-6 bg-white ">
+            <div class="fixed ">
+
+                <div class="pt-20 h-[600px] overflow-auto scroll-side">
+                    <div class="pb-6 pt-3">
+                        <a href="buat-surat.html"
+                            class="block px-4 py-4 rounded-lg font-semibold hover:font-semibold  text-black bg-spotSubtle bg-opacity-10  hover:bg-opacity-50">
+                            <i class="fa-solid fa-paper-plane fa-lg me-2"></i>
+                            Buat Surat
+                        </a>
+                    </div>
+                    <h2 class="mb-4 text-sm font-bold">Menu</h2>
+                    <ul class="flex flex-col gap-3">
+                        <!-- <li>
+                             <a href="javascript:void(0)" id="arsip"
+                                 class=" w-full block p-3 bg-primary text-white rounded-lg font-medium hover:bg-spotSubtle hover:bg-opacity-50 hover:text-black">
+                                 <i class="fa-solid fa-box-archive fa-lg me-3"></i>
+                                 Arsip</a>
+                                 <ul id="subIndex" x-transition.duration.500ms.origin.top.bottom class="mt-3 hidden transition duration-150 ease-in-out">
+                                  <li class="mb-3">
+                                      <a href="index.html" class="w-full block p-3  text-black rounded-lg font-medium hover:bg-primary hover:bg-opacity-5 hover:text-black">Surat Keluar</a>
+                                  </li>
+                                  <li class="mb-3">
+                                      <a href="index-masuk.html" class="w-full block p-3  text-black rounded-lg font-medium hover:bg-primary hover:bg-opacity-5 hover:text-black">Surat Masuk</a>
+                                  </li>
+                                 </ul>
+                         </li> -->
+                        <!--  <li>
+                             <a href="javascript:void(0)" id="templateToggle"
+                                 class="block p-3 rounded-lg font-medium hover:bg-primary hover:bg-opacity-5">
+                                 <i class="fa fa-brush fa-lg me-2"></i>
+                                 Manajemen Template
+                             </a>
+                           <ul class="ml-6 hidden" id="templateSubmenu">
+                                 <li class="mb-3">
+                                     <a class="block px-3 py-2  text-primary rounded-md font-semibold" href="kategori.html">Kategori</a>
+                                 </li>
+                                 <li class="mb-3">
+                                     <a class="block px-3 py-2  text-primary rounded-md font-semibold" href="header.html">Header</a>
+                                 </li>
+                                 <li class="mb-3">
+                                     <a class="block px-3 py-2  text-black rounded-md font-semibold" href="footer.html">Footer</a>
+                                 </li>
+                             </ul>
+                         </li> -->
+                        <li><a href="index.html" id="arsip"
+                                class=" w-full block p-3  text-black rounded-lg font-medium hover:bg-spotSubtle hover:bg-opacity-50 hover:text-black">
+                                <i class="fa-solid fa-envelopes-bulk fa-lg me-3"></i>
+                                Surat Keluar</a></li>
+                        <li><a href="surat-masuk.html" id="arsip"
+                                class=" w-full block p-3 bg-primary text-white rounded-lg font-semibold hover:bg-spotSubtle hover:bg-opacity-50 hover:text-black">
+                                <i class="fa-solid fa-box-archive fa-lg me-3"></i>
+                                Surat Masuk</a></li>
+                        <li>
+                            <a href="kategori.html"
+                                class="w-full block p-3  text-black rounded-lg font-semibold hover:bg-primary hover:bg-opacity-5 hover:text-black">
+                                <i class="fa fa-brush fa-lg me-2"></i>
+                                Template Kategori
+                            </a>
+                        </li>
+                        <li>
+                            <a href="template-header.html"
+                                class="block p-3 rounded-lg font-medium  hover:bg-primary hover:bg-opacity-5">
+                                <i class="fa fa-heading fa-lg me-2"></i>
+                                Template Header
+                            </a>
+                        </li>
+                        <li>
+                            <a href="template-footer.html"
+                                class="block p-3 rounded-lg font-medium  hover:bg-primary hover:bg-opacity-5">
+                                <i class="fa fa-f fa-lg me-2"></i>
+                                Template Footer
+                            </a>
+                        </li>
+                        <li>
+                            <a href="verifikator.html"
+                                class="block p-3 rounded-lg font-medium  hover:bg-primary hover:bg-opacity-5">
+                                <i class="fa-solid fa-fingerprint fa-lg me-2"></i>
+                                verifikator
+                            </a>
+                        </li>
+                        <li>
+                            <a href="penerima.html"
+                                class="block p-3 rounded-lg font-medium  hover:bg-primary hover:bg-opacity-5">
+                                <i class="fa fa-envelope-open fa-lg me-2"></i>
+                                Penerima
+                            </a>
+                        </li>
+                    </ul>
+                    <div>
+                        <h2 class="mb-4 mt-6 text-sm font-bold">Menu Administrator</h2>
+                        <ul class="flex flex-col gap-3 pb-20">
+                            <li>
+                                <a href="akun.html"
+                                    class="w-full block p-3  text-black rounded-lg font-medium hover:bg-primary hover:bg-opacity-5 hover:text-black"><i
+                                        class="fa fa-user fa-lg me-2"></i> Akun</a>
+                            </li>
+                            <li>
+                                <a href="ganti-password.html"
+                                    class="w-full block p-3  text-black rounded-lg font-medium hover:bg-primary hover:bg-opacity-5 hover:text-black"><i
+                                        class="fa fa-key fa-lg me-2"></i> Ganti Password</a>
+                            </li>
+                            <li>
+                                <a href="users.html" class="w-full block p-3  text-black rounded-lg font-medium hover:bg-primary hover:bg-opacity-5 hover:text-black"><i class="fa fa-users fa-lg me-2"></i>Akun Users</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </aside>
+        <!-- end sidebar -->
+
+
+        <main class="flex-1 relative">
+
+            <!-- main layout -->
+            <div class="penerima pt-28">
+                <div class="px-10 py-6 ">
+
+
+
+                    <div class="bg-white py-10 px-10 rounded-xl drop-shadow-lg">
+                        <!-- <div class="flex flex-col gap-3">
+                            <div id="alertRed"
+                                class="bg-red-50 rounded-xl  text-red-700 flex justify-between items-center p-4">
+                                <div class="flex gap-3 items-center">
+                                    <i class="fa-solid fa-triangle-exclamation fa-xl"></i>
+                                    <h5>Ups! Anda hanya bisa mengunggah file berformat PDF</h5>
+                                </div>
+                                <div><button><i class="fa fa-xmark fa-xl"></i></button></div>
+                            </div>
+                            <div id="alertGreen"
+                                class="bg-teal-50 rounded-xl  text-teal-700 flex justify-between items-center p-4">
+                                <div class="flex gap-3 items-center">
+                            
+                                    <h5>File berhasil di unggah</h5>
+                                </div>
+                                <div><button><i class="fa fa-xmark fa-xl"></i></button></div>
+                            </div>
+                        </div> -->
+                        <div id="masukSurat" class="pb-6 text-2xl font-semibold">Surat Masuk</div>
+                        <form action="">
+                            <div class="mb-6 relative">
+                                <label for="Tanggal">Tanggal Masuk</label>
+                                <input type="text" name="Tanggal" id="tanggal"
+                                    class="w-full tanggal pickadate py-3 px-4 mt-3 border-line border rounded-md focus:outline-spotSubtle">
+
+                            </div>
+
+                            <div id="dropzone" class="mb-6">
+                                <div
+                                    class="relative border-dashed border-4  border-primary h-96 flex justify-center items-center rounded-md bg-primary bg-opacity-5">
+                                    <label for="fileInput" class="text-center cursor-pointer">
+                                        <ion-icon class="text-primary" name="cloud-upload-outline"
+                                            size="large"></ion-icon>
+                                        <h2 class="text-xl font-semibold my-2 text-primary">Drag and drop your files
+                                            here</h2>
+                                        <p class="text-primary">or click to select files</p>
+                                        <input type="file" name="fileInput" id="fileInput"
+                                            class="absolute h-full w-full cursor-pointer hidden"
+                                            accept="application/pdf" multiple>
+                                    </label>
+                                </div>
+                                <div id="fileList" class="text-center flex gap-3 flex-wrap"></div>
+                            </div>
+
+                            <!-- <div class="mb-6">
+                                <label for="suratMasuk" class="">unggah surat masuk</label>
+                                <input type="file" name="suratMasuk" data-height="350"
+                                    data-allowed-file-extensions="pdf" id="suratMasuk" class="dropify w-full mt-3" multiple>
+                            </div> -->
+                            <!-- <div class="mb-6">
+                                <label for="suratMasuk" class="">unggah surat masuk</label>
+                                <form action="/file-upload" class="dropzone" id="myDropzone"></form>
+                            </div> -->
+
+                            <div class="flex justify-end gap-4">
+                                <a href="index.html"
+                                    class="px-4 py-2 border-line border text-md rounded-md text-grey font-semibold">Kembali</a>
+                                <button id="buttonPreview"
+                                    class="px-6  py-2 border-line border text-md rounded-md bg-primary text-white font-semibold">Simpan
+                                    Pesan Masuk</button>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+            <!-- main layout end -->
+        </main>
+    </section>
+
+    </div>
+
+
+    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.3/dropzone.min.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script type="text/javascript" src="../assets/dist/main.js"></script>
+    <!-- <script src="/node_modules/air-datepicker/air-datepicker.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pickadate.js/3.6.2/picker.js"></script>
+    <script src="../node_modules/dropify/dist/js/dropify.min.js"></script>
+    <script src="/node_modules/pickadate.js/lib/picker.js"></script>
+    <script src="/node_modules/pickadate.js/lib/picker.date.js"></script>
+    <script src="/node_modules/pickadate.js/lib/translations/id_ID.js"></script>
+
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+            // $("#popUp").click(function (e) {
+            //     e.preventDefault();
+            //     $("#showPop").attr("class", "block");
+            // });
+
+            const dropzone = $('#dropzone');
+            const inputFile = $('#fileInput');
+            const listFile = $('#fileList');
+
+            dropzone.on('dragover', function (e) {
+                e.preventDefault();
+                dropzone.addClass('border-blue-500');
+            });
+            dropzone.on('dragleave', function (e) {
+                e.preventDefault();
+                dropzone.removeClass('border-blue-500');
+            })
+            dropzone.on('drop', function (e) {
+                e.preventDefault();
+                dropzone.removeClass('border-blue-500');
+                const files = e.originalEvent.dataTransfer.files;
+                handleFiles(files);
+            });
+            inputFile.on('change', function () {
+                const files = inputFile[0].files;
+                handleFiles(files);
+            });
+            function handleFiles(files) {
+                for (const file of files) {
+                    if (file.type === 'application/pdf') {
+                        const listItem = $('<div>').addClass('bg-primary bg-opacity-5 p-2 mt-2 rounded-md flex justify-between items-center');
+                        const fileName = $('<span>').text(file.name);
+                        const deleteButton = $('<button>').html('<i class="fa fa-circle-xmark"></i>').addClass('text-red-500 ml-4 cursor-pointer');
+                            
+                        deleteButton.on('click', function () {
+                            listItem.remove();
+                        });
+                       
+                        listItem.append(fileName, deleteButton);
+                        listFile.append(listItem);
+                        // $('#alertRed').addClass('hidden')
+                        // $('#masukSurat').removeClass('mt-6')
+                    } else {
+                        // $('#masukSurat').addClass('mt-6')
+                        // $('#alertRed').addClass('block')
+                    }
+                }
+            }
+
+            $('.tanggal').pickadate({
+                labelMonthNext: 'Bulan Selanjutnya',
+                labelMonthPrev: 'Bulan Sebelumnya',
+                labelMonthSelect: 'Pilih Bulan',
+                labelYearSelect: 'Pilih Tahun',
+                selectMonths: true,
+                selectYears: true,
+                format: 'dddd, dd mmm yyyy',
+                formatSubmit: 'yyyy/mm/dd',
+                hiddenPrefix: 'prefix__',
+                hiddenSuffix: '__suffix'
+            });
+            // $('#suratMasuk').dropify({
+
+            //     tpl: {
+            //         wrap: '<div class="dropify-wrapper"></div>',
+            //         loader: '<div class="dropify-loader"></div>',
+            //         message: '<div class="dropify-message"><span class="file-icon" /> <p class="text-lg">{{ default }}</p></div>',
+            //         preview: '<div class="dropify-preview"><span class="dropify-render"></span><div class="dropify-infos"><div class="dropify-infos-inner"><p class="dropify-infos-message">{{ replace }}</p></div></div></div>',
+            //         filename: '<p class="dropify-filename"><span class="file-icon"></span> <span class="dropify-filename-inner"></span></p>',
+            //         clearButton: '<button type="button" class="dropify-clear">{{ remove }}</button>',
+            //         errorLine: '<p class="dropify-error">{{ error }}</p>',
+            //         errorsContainer: '<div class="dropify-errors-container"><ul></ul></div>'
+            //     }
+            // });
+        })
+    </script>
+
+</body>
+
+</html>

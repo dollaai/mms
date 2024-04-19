@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suratan</title>
+
+    <!-- fonts google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- tailwind css -->
+    <link rel="stylesheet" href="../assets/dist/main.css">
+    <link rel="stylesheet" href="../assets/dist/style.css">
+
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- dropify -->
+    <link rel="stylesheet" href="../node_modules/dropify/dist/css/dropify.min.css">
+    <link rel="stylesheet" href="../node_modules/dropify/dist/fonts/dropify.woff">
+
+    <!-- phospor -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <script src="//unpkg.com/alpinejs" defer></script>
+
+</head>
+
+<body class="bg-background">
+    <!-- nav -->
+    <nav class="px-10 py-6  fixed top-0 left-0 right-0 bg-white z-50">
+        <div class="w-full flex justify-between">
+
+            <div class="flex-1">
+                <div class="flex gap-x-32 flex-1">
+                    <div class="logo text-center ">
+                        <h1 class="text-3xl text-black font-bold">Suratan</h1>
+                    </div>
+                    <form action="">
+                        <div class="bg-blue-50 w-[400px] px-4 flex items-center rounded-lg">
+                            <label for="searchbar"><i class="ph ph-magnifying-glass  text-darkGrey"
+                                    style="font-size: 28px;"></i></label>
+                            <input type="search" name="searchbar" id="searchbar"
+                                class="w-full bg-blue-50 placeholder:text-darkGrey ps-3 h-10 focus:outline-none rounded-e-xl"
+                                placeholder="Search">
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="flex items-center gap-3">
+                <div class="profile w-10 h-10 rounded-full bg-slate-400 bg-cover bg-center bg-no-repeat"
+                    style="background-image: url(https://source.unsplash.com/featured?profile);"></div>
+                <div class="text-lg font-semibold flex items-center gap-1">Admin <i class="fa fa-angle-down fa-xs"></i>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- nav end -->
+    <section class="flex relative" >
+         <!-- sidebar -->
+         <aside id="sidebar" class="w-[250px] py-6 px-6 bg-white ">
+            <div class="fixed ">
+  
+                 <div class="pt-20 h-[600px] overflow-auto scroll-side">
+                     <div class="pb-6 pt-3">
+                         <a href="buat-surat.html"
+                             class="block px-4 py-4 rounded-lg font-semibold hover:font-semibold  text-black bg-spotSubtle bg-opacity-10  hover:bg-opacity-50">
+                             <i class="fa-solid fa-paper-plane fa-lg me-2"></i>
+                             Buat Surat
+                         </a>
+                     </div>
+                     <h2 class="mb-4 text-sm font-bold">Menu</h2>
+                     <ul class="flex flex-col gap-3">
+                         <!-- <li>
+                             <a href="javascript:void(0)" id="arsip"
+                                 class=" w-full block p-3 bg-primary text-white rounded-lg font-medium hover:bg-spotSubtle hover:bg-opacity-50 hover:text-black">
+                                 <i class="fa-solid fa-box-archive fa-lg me-3"></i>
+                                 Arsip</a>
+                                 <ul id="subIndex" x-transition.duration.500ms.origin.top.bottom class="mt-3 hidden transition duration-150 ease-in-out">
+                                  <li class="mb-3">
+                                      <a href="index.html" class="w-full block p-3  text-black rounded-lg font-medium hover:bg-primary hover:bg-opacity-5 hover:text-black">Surat Keluar</a>
+                                  </li>
+                                  <li class="mb-3">
+                                      <a href="index-masuk.html" class="w-full block p-3  text-black rounded-lg font-medium hover:bg-primary hover:bg-opacity-5 hover:text-black">Surat Masuk</a>
+                                  </li>
+                                 </ul>
+                         </li> -->
+                          <!--  <li>
+                             <a href="javascript:void(0)" id="templateToggle"
+                                 class="block p-3 rounded-lg font-medium hover:bg-primary hover:bg-opacity-5">
+                                 <i class="fa fa-brush fa-lg me-2"></i>
+                                 Manajemen Template
+                             </a>
+                           <ul class="ml-6 hidden" id="templateSubmenu">
+                                 <li class="mb-3">
+                                     <a class="block px-3 py-2  text-primary rounded-md font-semibold" href="kategori.html">Kategori</a>
+                                 </li>
+                                 <li class="mb-3">
+                                     <a class="block px-3 py-2  text-primary rounded-md font-semibold" href="header.html">Header</a>
+                                 </li>
+                                 <li class="mb-3">
+                                     <a class="block px-3 py-2  text-black rounded-md font-semibold" href="footer.html">Footer</a>
+                                 </li>
+                             </ul>
+                         </li> -->
+                         <li><a href="index.html" id="arsip"
+                          class=" w-full block p-3  text-black rounded-lg font-medium hover:bg-spotSubtle hover:bg-opacity-50 hover:text-black">
+                          <i class="fa-solid fa-envelopes-bulk fa-lg me-3"></i>
+                          Surat Keluar</a></li>
+                         <li><a href="surat-masuk.html" id="arsip"
+                          class=" w-full block p-3 text-black rounded-lg font-semibold hover:bg-spotSubtle hover:bg-opacity-50 hover:text-black">
+                          <i class="fa-solid fa-box-archive fa-lg me-3"></i>
+                          Surat Masuk</a></li>
+                         <li>
+                             <a href="kategori.html"
+                                 class="w-full block p-3  text-black rounded-lg font-semibold hover:bg-primary hover:bg-opacity-5 hover:text-black">
+                                 <i class="fa fa-brush fa-lg me-2"></i>
+                                 Template Kategori
+                             </a>
+                         </li>
+                         <li>
+                             <a href="template-header.html"
+                                 class="block p-3 rounded-lg font-medium  hover:bg-primary hover:bg-opacity-5">
+                                 <i class="fa fa-heading fa-lg me-2"></i>
+                                 Template Header
+                             </a>
+                         </li>
+                         <li>
+                             <a href="template-footer.html"
+                                 class="block p-3 rounded-lg bg-primary font-semibold text-white hover:text-black hover:bg-primary hover:bg-opacity-5">
+                                 <i class="fa fa-f fa-lg me-2"></i>
+                                 Template Footer
+                             </a>
+                         </li>
+                         <li>
+                             <a href="verifikator.html"
+                                 class="block p-3 rounded-lg font-medium  hover:bg-primary hover:bg-opacity-5">
+                                 <i class="fa-solid fa-fingerprint fa-lg me-2"></i>
+                                 verifikator
+                             </a>
+                         </li>
+                         <li>
+                             <a href="penerima.html"
+                                 class="block p-3 rounded-lg font-medium  hover:bg-primary hover:bg-opacity-5">
+                                 <i class="fa fa-envelope-open fa-lg me-2"></i>
+                                 Penerima
+                             </a>
+                         </li>
+                     </ul>
+                     <div>
+                      <h2 class="mb-4 mt-6 text-sm font-bold">Menu Administrator</h2>
+                      <ul class="flex flex-col gap-3 pb-20">
+                          <li>
+                              <a href="akun.html" class="w-full block p-3  text-black rounded-lg font-medium hover:bg-primary hover:bg-opacity-5 hover:text-black"><i class="fa fa-user fa-lg me-2"></i> Akun</a>
+                          </li>
+                          <li>
+                              <a href="ganti-password.html" class="w-full block p-3  text-black rounded-lg font-medium hover:bg-primary hover:bg-opacity-5 hover:text-black"><i class="fa fa-key fa-lg me-2"></i> Ganti Password</a>
+                          </li>
+                          <li>
+                            <a href="users.html" class="w-full block p-3  text-black rounded-lg font-medium hover:bg-primary hover:bg-opacity-5 hover:text-black"><i class="fa fa-users fa-lg me-2"></i>Akun Users</a>
+                        </li>
+                      </ul>
+                     </div>
+                 </div>
+                
+            </div>
+          </aside>
+          <!-- end sidebar -->
+
+        <main class="flex-1 relative"  x-data="{popOpenDelete:false}">
+            <!-- nav -->
+            <nav class="px-10 py-6  fixed top-0 left-0 right-0 bg-white z-50">
+                <div class="w-full flex justify-between">
+
+                    <div class="flex-1">
+                        <div class="flex gap-x-32 flex-1">
+                            <div class="logo text-center ">
+                                <h1 class="text-3xl text-black font-bold">Suratan</h1>
+                            </div>
+                            <form action="">
+                                <div class="bg-blue-50 w-[400px] px-4 flex items-center rounded-lg">
+                                    <label for="searchbar"><i class="ph ph-magnifying-glass  text-darkGrey"
+                                            style="font-size: 28px;"></i></label>
+                                    <input type="search" name="searchbar" id="searchbar"
+                                        class="w-full bg-blue-50 placeholder:text-darkGrey ps-3 h-10 focus:outline-none rounded-e-xl"
+                                        placeholder="Search">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <div class="profile w-10 h-10 rounded-full bg-slate-400 bg-cover bg-center bg-no-repeat"
+                            style="background-image: url(https://source.unsplash.com/featured?profile);"></div>
+                        <div class="text-lg font-semibold flex items-center gap-1">Admin <i
+                                class="fa fa-angle-down fa-xs"></i>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            <!-- nav end -->
+            <!-- main layout -->
+            <div  x-data="{footerAdd:false ,footerTem:null}">
+                <div class="kategori py-28 min-h-screen">
+                    <div class="px-10">
+                        <div class="bg-white p-6 rounded-xl drop-shadow-lg">
+                            <div class="flex justify-end pb-6">
+                                <button @click="footerAdd=true" type="button" class="block px-6 py-3 text-white font-medium bg-primary rounded-xl">Tambah
+                                    template</button>
+                            </div>
+                            <div class="grid grid-cols-2 gap-6  py-6">
+                               
+                                <a href="javascript:void(0)">
+                                    <div class="card-tempalte-1 text-center ">
+                                       <div class="relative" @mouseenter="footerTem='footer1'" @mouseleave="footerTem=null">
+                                            <div x-show="footerTem === 'footer1'" x-transition
+                                                class="absolute top-0 left-0 right-0 bottom-0 inset-0 bg-black opacity-50">
+                                            </div>
+                                            <div x-show="footerTem ==='footer1'"
+                                                class="absolute flex items-center justify-center gap-4 top-0 left-0 right-0 bottom-0 inset-0 bg-gray-500 bg-opacity-75">
+                                                <button
+                                                class="bg-amber-400 rounded-full w-10 h-10 text-white flex justify-center items-center hover:bg-opacity-50 p-2"><i
+                                                    class="fa fa-star"></i></button>
+                                                <button
+                                                    class="bg-greenSpot rounded-full w-10 h-10 text-white flex justify-center items-center hover:bg-opacity-50 p-2"><i
+                                                        class="fa fa-pen"></i></button>
+                                                <button @click="popOpenDelete=true"
+                                                    class="bg-primary rounded-full w-10 h-10 text-white flex justify-center items-center p-2 hover:bg-opacity-50"><i
+                                                        class="fa fa-trash"></i></button>
+                                            </div>
+    
+                                            <img src="../assets/img/footer.jpg" class=" " alt="">
+                                        </div>
+                                        <h3 class="py-3 font-semibold">footer 1</h3>
+                                    </div>
+                                </a>
+                                <a href="javascript:void(0)">
+                                    <div class="card-tempalte-1 text-center ">
+                                       <div class="relative" @mouseenter="footerTem='footer2'" @mouseleave="footerTem=null">
+                                            <div x-show="footerTem === 'footer2'" x-transition
+                                                class="absolute top-0 left-0 right-0 bottom-0 inset-0 bg-black opacity-50">
+                                            </div>
+                                            <div x-show="footerTem ==='footer2'"
+                                                class="absolute flex items-center justify-center gap-4 top-0 left-0 right-0 bottom-0 inset-0 bg-gray-500 bg-opacity-75">
+                                                <button
+                                                    class="bg-greenSpot rounded-full w-10 h-10 text-white flex justify-center items-center hover:bg-opacity-50 p-2"><i
+                                                        class="fa fa-pen"></i></button>
+                                                <button @click="popOpenDelete=true"
+                                                    class="bg-primary rounded-full w-10 h-10 text-white flex justify-center items-center p-2 hover:bg-opacity-50"><i
+                                                        class="fa fa-trash"></i></button>
+                                            </div>
+    
+                                            <img src="../assets/img/footer.jpg" class=" " alt="">
+                                        </div>
+                                        <h3 class="py-3 font-semibold">footer 2</h3>
+                                    </div>
+                                </a>
+                                <a href="javascript:void(0)">
+                                    <div class="card-tempalte-1 text-center ">
+                                       <div class="relative" @mouseenter="footerTem='footer3'" @mouseleave="footerTem=null">
+                                            <div x-show="footerTem === 'footer3'" x-transition
+                                                class="absolute top-0 left-0 right-0 bottom-0 inset-0 bg-black opacity-50">
+                                            </div>
+                                            <div x-show="footerTem ==='footer3'"
+                                                class="absolute flex items-center justify-center gap-4 top-0 left-0 right-0 bottom-0 inset-0 bg-gray-500 bg-opacity-75">
+                                                <button
+                                                class="bg-amber-400 rounded-full w-10 h-10 text-white flex justify-center items-center hover:bg-opacity-50 p-2"><i
+                                                    class="fa fa-star"></i></button>
+                                                <button 
+                                                    class="bg-greenSpot rounded-full w-10 h-10 text-white flex justify-center items-center hover:bg-opacity-50 p-2"><i
+                                                        class="fa fa-pen"></i></button>
+                                                <button @click="popOpenDelete=true"
+                                                    class="bg-primary rounded-full w-10 h-10 text-white flex justify-center items-center    p-2 hover:bg-opacity-50"><i
+                                                        class="fa fa-trash"></i></button>
+                                            </div>
+    
+                                            <img src="../assets/img/footer.jpg" class=" " alt="">
+                                        </div>
+                                        <h3 class="py-3 font-semibold">footer 3</h3>
+                                    </div>
+                                </a>
+                                <a href="javascript:void(0)">
+                                    <div class="card-tempalte-1 text-center ">
+                                       <div class="relative" @mouseenter="footerTem='footer4'" @mouseleave="footerTem=null">
+                                            <div x-show="footerTem === 'footer4'" x-transition
+                                                class="absolute top-0 left-0 right-0 bottom-0 inset-0 bg-black opacity-50">
+                                            </div>
+                                            <div x-show="footerTem ==='footer4'"
+                                                class="absolute flex items-center justify-center gap-4 top-0 left-0 right-0 bottom-0 inset-0 bg-gray-500 bg-opacity-75">
+                                                <button
+                                                class="bg-amber-400 rounded-full w-10 h-10 text-white flex justify-center items-center hover:bg-opacity-50 p-2"><i
+                                                    class="fa fa-star"></i></button>
+                                                <button
+                                                    class="bg-greenSpot rounded-full w-10 h-10 text-white flex justify-center items-center hover:bg-opacity-50 p-2"><i
+                                                        class="fa fa-pen"></i></button>
+                                                <button @click="popOpenDelete=true"
+                                                    class="bg-primary rounded-full w-10 h-10 text-white flex justify-center items-center p-2 hover:bg-opacity-50"><i
+                                                        class="fa fa-trash"></i></button>
+                                            </div>
+    
+                                            <img src="../assets/img/footer.jpg" class=" " alt="">
+                                        </div>
+                                        <h3 class="py-3 font-semibold">footer 4</h3>
+                                    </div>
+                                </a>
+                                <a href="javascript:void(0)">
+                                    <div class="card-tempalte-1 text-center ">
+                                       <div class="relative" @mouseenter="footerTem='footer5'" @mouseleave="footerTem=null">
+                                            <div x-show="footerTem === 'footer5'" x-transition
+                                                class="absolute top-0 left-0 right-0 bottom-0 inset-0 bg-black opacity-50">
+                                            </div>
+                                            <div x-show="footerTem ==='footer5'"
+                                                class="absolute flex items-center justify-center gap-4 top-0 left-0 right-0 bottom-0 inset-0 bg-gray-500 bg-opacity-75">
+                                                <button
+                                                class="bg-amber-400 rounded-full w-10 h-10 text-white flex justify-center items-center hover:bg-opacity-50 p-2"><i
+                                                    class="fa fa-star"></i></button>
+                                                <button
+                                                    class="bg-greenSpot rounded-full w-10 h-10 text-white flex justify-center items-center hover:bg-opacity-50 p-2"><i
+                                                        class="fa fa-pen"></i></button>
+                                                <button @click="popOpenDelete=true"
+                                                    class="bg-primary rounded-full w-10 h-10 text-white flex justify-center items-center p-2 hover:bg-opacity-50"><i
+                                                        class="fa fa-trash"></i></button>
+                                            </div>
+    
+                                            <img src="../assets/img/footer.jpg" class=" " alt="">
+                                        </div>
+                                        <h3 class="py-3 font-semibold">footer 5</h3>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="flex justify-end">
+                                <ul class="inline-flex -space-x-px text-sm">
+                                    <li>
+                                        <a href="#"
+                                            class="flex items-center justify-center px-3 h-8 ml-0 leading-tight text-gray-500 bg-white border border-gray-300 rounded-l-lg hover:bg-gray-100 hover:text-gray-700 ">Previous</a>
+                                    </li>
+                                    <li>
+                                        <a href="#"
+                                            class="flex items-center justify-center px-3 h-8 leading-tight text-white bg-primary border border-gray-300 hover:bg-spotSubtle hover:text-gray-700 ">1</a>
+                                    </li>
+                                    <li>
+                                        <a href="#"
+                                            class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-spotSubtle hover:text-gray-700 ">2</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" aria-current="page"
+                                            class="flex items-center justify-center px-3 h-8 text-black border border-gray-300 bg-white hover:bg-spotSubtle  ">3</a>
+                                    </li>
+                                    <li>
+                                        <a href="#"
+                                            class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-spotSubtle hover:text-gray-700 ">4</a>
+                                    </li>
+                                    <li>
+                                        <a href="#"
+                                            class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-spotSubtle hover:text-gray-700 ">5</a>
+                                    </li>
+                                    <li>
+                                        <a href="#"
+                                            class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 rounded-r-lg hover:bg-spotSubtle hover:text-gray-700 ">Next</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div x-show="footerAdd" x-transition>
+                        <div class="absolute top-0 left-0 right-0 bottom-0 inset-0 bg-gray-500 opacity-75 min-h-screen"></div>
+                    </div>
+                    <div x-show="footerAdd" x-transition.origin.bottom.duration.500ms id="tambahKop"class="w-1/2 bg-white rounded-xl p-6 absolute top-[100px] left-[250px]  drop-shadow-md">
+                        <div class="flex justify-between items-start pb-6">
+                            <div class="flex flex-col ">
+                                <h3 class="text-xl font-bold">Tambah Footer</h3>
+                                <p class="text-sm opacity-50 w-3/4">tambah Footer surat anda agar berfariasi ketika memakainya nanti</p>
+                            </div>
+                            <button @click="footerAdd=false"><i class="fas fa-xmark fa-xl"></i></button></div>
+                        <form action="">
+                            <div class="mb-6">
+                                <label for="nameFooter" class="pb-3">Nama Footer</label>
+                                <input type="text" id="nameFooter"
+                                    class="px-4 mt-3 rounded-lg py-2 border border-line w-full focus:outline-spotSubtle">
+                            </div>
+                            <div class="mb-6 flex gap-2 items-center">
+                            
+                                <div>
+                                    <input type="radio" name="ukuran" id="A4">
+                                    <label for="A4">3508 x 2480 px (A4)</label>
+                                </div>
+                                <div>
+                                    <input type="radio" name="ukuran" id="legal">
+                                    <label for="legal">3400 x 5600 px (legal)</label>
+                                </div>
+                                <div>
+                                    <input type="radio" name="ukuran" id="tabloid">
+                                    <label for="tabloid">3300 x 5100 px (Tabloid)</label>
+                                </div>
+                            </div>
+                            <div class="mb-6 flex gap-2 items-center">
+                    
+                                <input type="checkbox" name="default" id="defaultFooter">
+                                <label for="defaultFooter">Jadikan sebagai default footer</label>
+                            </div>
+                            <div>
+                                <label for="templateFooter">Template Footer</label>
+                                <input type="file" name="" id="templateFooter">
+                            </div>
+                            <div class="flex justify-center mt-6"><button class="px-4 py-2 rounded-lg bg-primary w-full text-white font-semibold">Tambah Footer</button></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- main layout end -->
+            
+            <div x-show="popOpenDelete"  >
+                <div x-show="popOpenDelete"  x-transition>
+                   
+                    <div class="absolute top-0 left-0 right-0 bottom-0 inset-0 bg-gray-500 opacity-75"></div>
+                </div>
+                <div x-show="popOpenDelete" x-transition.origin.bottom.duration.700ms
+                    class="bg-white absolute top-[200px] border border-line rounded-xl left-[350px] p-6 drop-shadow-md w-[300px] flex flex-col gap-3">
+                    <div class="flex flex-col gap-6 justify-center items-center">
+                        <div><i class="far fa-circle-xmark text-6xl text-primary"></i></div>
+                        <div class="text-center">
+                            <h3 class="text-2xl font-bold">Berhasil dihapus</h3>
+                            <p class="text-sm opacity-50">Penerima Berhasil dihapus</p>
+                        </div>
+                        <div><button @click="popOpenDelete= false" type="button"
+                                class="w-40 px-3 py-2 bg-primary rounded-xl text-white font-semibold">Oke</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </section>
+
+    </div>
+    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="../assets/dist/main.js"></script>
+    <script src="../node_modules/dropify/dist/js/dropify.min.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script>
+        $("#templateFooter").dropify({
+            tpl: {
+                message: '<div class="dropify-message"><span class="file-icon" /> <p class="text-sm">{{ default }}</p></div>',
+            }
+        });
+    </script>
+</body>
+
+</html>

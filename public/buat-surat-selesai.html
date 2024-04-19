@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suratan</title>
+
+    <!-- fonts google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- tailwind css -->
+    <link rel="stylesheet" href="../assets/dist/main.css">
+    <link rel="stylesheet" href="../assets/dist/style.css">
+
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+    <link rel="stylesheet" href="../node_modules/dropify/dist/css/dropify.css">
+    <!-- <link rel="stylesheet" href="../node_modules/dropify/dist/fonts/dropify.woff"> -->
+
+
+    <!-- phospor -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <script src="//unpkg.com/alpinejs" defer></script>
+</head>
+
+<body class="bg-background">
+     <!-- nav -->
+     <nav class="px-10 py-6  fixed top-0 left-0 right-0 bg-white z-50">
+        <div class="w-full flex justify-between">
+
+            <div class="flex-1">
+                <div class="flex gap-x-32 flex-1">
+                    <div class="logo text-center ">
+                        <h1 class="text-3xl text-black font-bold">Suratan</h1>
+                    </div>
+                    <form action="">
+                        <div class="bg-blue-50 w-[400px] px-4 flex items-center rounded-lg">
+                            <label for="searchbar"><i class="ph ph-magnifying-glass  text-darkGrey"
+                                    style="font-size: 28px;"></i></label>
+                            <input type="search" name="searchbar" id="searchbar"
+                                class="w-full bg-blue-50 placeholder:text-darkGrey ps-3 h-10 focus:outline-none rounded-e-xl"
+                                placeholder="Search">
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="flex items-center gap-3">
+                <div class="profile w-10 h-10 rounded-full bg-slate-400 bg-cover bg-center bg-no-repeat"
+                    style="background-image: url(https://source.unsplash.com/featured?profile);"></div>
+                <div class="text-lg font-semibold flex items-center gap-1">Admin <i class="fa fa-angle-down fa-xs"></i>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- nav end -->
+    <section class="flex  relative">
+       <!-- sidebar -->
+        <aside id="sidebar" class="w-[250px] py-6 px-6 bg-white ">
+            <div class="fixed ">
+  
+                 <div class="pt-20 h-[600px] overflow-auto scroll-side">
+                     <div class="pb-6 pt-3">
+                         <a href="buat-surat.html"
+                             class="block px-4 py-4 rounded-lg bg-primary font-semibold text-white hover:font-medium  hover:text-black    hover:bg-opacity-10">
+                             <i class="fa-solid fa-paper-plane fa-lg me-2"></i>
+                             Buat Surat
+                         </a>
+                     </div>
+                     <h2 class="mb-4 text-sm font-bold">Menu</h2>
+                     <ul class="flex flex-col gap-3">
+                         <!-- <li>
+                             <a href="javascript:void(0)" id="arsip"
+                                 class=" w-full block p-3 bg-primary text-white rounded-lg font-medium hover:bg-spotSubtle hover:bg-opacity-50 hover:text-black">
+                                 <i class="fa-solid fa-box-archive fa-lg me-3"></i>
+                                 Arsip</a>
+                                 <ul id="subIndex" x-transition.duration.500ms.origin.top.bottom class="mt-3 hidden transition duration-150 ease-in-out">
+                                  <li class="mb-3">
+                                      <a href="index.html" class="w-full block p-3  text-black rounded-lg font-medium hover:bg-primary hover:bg-opacity-5 hover:text-black">Surat Keluar</a>
+                                  </li>
+                                  <li class="mb-3">
+                                      <a href="index-masuk.html" class="w-full block p-3  text-black rounded-lg font-medium hover:bg-primary hover:bg-opacity-5 hover:text-black">Surat Masuk</a>
+                                  </li>
+                                 </ul>
+                         </li> -->
+                          <!--  <li>
+                             <a href="javascript:void(0)" id="templateToggle"
+                                 class="block p-3 rounded-lg font-medium hover:bg-primary hover:bg-opacity-5">
+                                 <i class="fa fa-brush fa-lg me-2"></i>
+                                 Manajemen Template
+                             </a>
+                           <ul class="ml-6 hidden" id="templateSubmenu">
+                                 <li class="mb-3">
+                                     <a class="block px-3 py-2  text-primary rounded-md font-semibold" href="kategori.html">Kategori</a>
+                                 </li>
+                                 <li class="mb-3">
+                                     <a class="block px-3 py-2  text-primary rounded-md font-semibold" href="header.html">Header</a>
+                                 </li>
+                                 <li class="mb-3">
+                                     <a class="block px-3 py-2  text-black rounded-md font-semibold" href="footer.html">Footer</a>
+                                 </li>
+                             </ul>
+                         </li> -->
+                         <li><a href="index.html" id="arsip"
+                          class=" w-full block p-3  text-black rounded-lg font-medium hover:bg-spotSubtle hover:bg-opacity-50 hover:text-black">
+                          <i class="fa-solid fa-envelopes-bulk fa-lg me-3"></i>
+                          Surat Keluar</a></li>
+                         <li><a href="surat-masuk.html" id="arsip"
+                          class=" w-full block p-3 rounded-lg font-medium hover:bg-spotSubtle hover:bg-opacity-50 hover:text-black">
+                          <i class="fa-solid fa-box-archive fa-lg me-3"></i>
+                          Surat Masuk</a></li>
+                         <li>
+                             <a href="kategori.html"
+                                 class="w-full block p-3  text-black rounded-lg font-semibold hover:bg-primary hover:bg-opacity-5 hover:text-black">
+                                 <i class="fa fa-brush fa-lg me-2"></i>
+                                 Template Kategori
+                             </a>
+                         </li>
+                         <li>
+                             <a href="template-header.html"
+                                 class="block p-3 rounded-lg font-medium  hover:bg-primary hover:bg-opacity-5">
+                                 <i class="fa fa-heading fa-lg me-2"></i>
+                                 Template Header
+                             </a>
+                         </li>
+                         <li>
+                             <a href="template-footer.html"
+                                 class="block p-3 rounded-lg font-medium  hover:bg-primary hover:bg-opacity-5">
+                                 <i class="fa fa-f fa-lg me-2"></i>
+                                 Template Footer
+                             </a>
+                         </li>
+                         <li>
+                             <a href="verifikator.html"
+                                 class="block p-3 rounded-lg font-medium  hover:bg-primary hover:bg-opacity-5">
+                                 <i class="fa-solid fa-fingerprint fa-lg me-2"></i>
+                                 verifikator
+                             </a>
+                         </li>
+                         <li>
+                             <a href="penerima.html"
+                                 class="block p-3 rounded-lg font-medium  hover:bg-primary hover:bg-opacity-5">
+                                 <i class="fa fa-envelope-open fa-lg me-2"></i>
+                                 Penerima
+                             </a>
+                         </li>
+                     </ul>
+                     <div>
+                      <h2 class="mb-4 mt-6 text-sm font-bold">Menu Administrator</h2>
+                      <ul class="flex flex-col gap-3 pb-20">
+                          <li>
+                              <a href="akun.html" class="w-full block p-3  text-black rounded-lg font-medium hover:bg-primary hover:bg-opacity-5 hover:text-black"><i class="fa fa-user fa-lg me-2"></i> Akun</a>
+                          </li>
+                          <li>
+                              <a href="ganti-password.html" class="w-full block p-3  text-black rounded-lg font-medium hover:bg-primary hover:bg-opacity-5 hover:text-black"><i class="fa fa-key fa-lg me-2"></i> Ganti Password</a>
+                          </li>
+                          <li>
+                            <a href="users.html" class="w-full block p-3  text-black rounded-lg font-medium hover:bg-primary hover:bg-opacity-5 hover:text-black"><i class="fa fa-users fa-lg me-2"></i>Akun Users</a>
+                        </li>
+                      </ul>
+                     </div>
+                 </div>
+                
+            </div>
+          </aside>
+          <!-- end sidebar -->
+
+
+        <main class="flex-1 relative">
+
+            <!-- main layout -->
+            <div class="penerima pt-28">
+                <div class="px-10 py-6 ">
+                    <div class="flex items-center mb-20 w-[400px] mx-auto justify-center">
+                        <div class="flex items-center !text-primary relative">
+                            <div
+                                class="rounded-full transition  duration-500 ease-in-out h-12 w-12 py-3 border-2 border-primary ">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="feather feather-bookmark ">
+                                    <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
+                                </svg>
+                            </div>
+                            <div
+                                class="absolute top-0 -ml-10 text-center mt-16 w-32 text-xs font-medium uppercase  text-gray-500">
+                                Buat Surat</div>
+                        </div>
+                        <div class="flex-auto border-t-2 transition duration-500 ease-in-out border-primary"></div>
+                        <div class="flex items-center text-primary relative">
+                            <div
+                                class="rounded-full transition duration-500 ease-in-out h-12 w-12 py-3 border-2 border-primary text-primary">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="feather feather-user-plus ">
+                                    <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="8.5" cy="7" r="4"></circle>
+                                    <line x1="20" y1="8" x2="20" y2="14"></line>
+                                    <line x1="23" y1="11" x2="17" y2="11"></line>
+                                </svg>
+                            </div>
+                            <div
+                                class="absolute top-0 -ml-10 text-center mt-16 w-32 text-xs font-medium uppercase text-gray-500">
+                                Preview</div>
+                        </div>
+                        <div class="flex-auto border-t-2 transition duration-500 ease-in-out border-primary"></div>
+
+                        <div class="flex items-center text-white relative">
+                            <div
+                                class="rounded-full transition duration-500 ease-in-out h-12 w-12 py-3 border-2 border-primary bg-primary">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="feather feather-database ">
+                                    <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                                    <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+                                    <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+                                </svg>
+                            </div>
+                            <div
+                                class="absolute top-0 -ml-10 text-center mt-16 w-32 text-xs font-medium uppercase text-primary">
+                                Selesai</div>
+                        </div>
+                    </div>
+
+
+                    <div class="bg-white py-10 px-10 rounded-xl drop-shadow-lg">
+                        <div class="py-10">
+                            <h2 class="font-semibold text-2xl text-center pb-10">Surat Selesai dibuat</h2>
+                            <ul class="flex gap-6 justify-center items-center">
+                                <li>
+                                    <a href="#" class=" p-3 w-12 flex items-center justify-center text-primary hover:bg-primary hover:text-white h-12 bg-spotSubtle rounded-full"><i class="fa-brands fa-whatsapp fa-xl"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#" class=" p-3 flex items-center justify-center w-12 text-primary hover:bg-primary hover:text-white h-12 bg-spotSubtle rounded-full"><i class="fa-regular fa-paper-plane fa-xl"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#" class=" p-3 flex items-center justify-center w-12 text-primary hover:bg-primary hover:text-white h-12 bg-spotSubtle rounded-full"><i class="fa-regular fa-envelope fa-xl"></i></a>
+                                </li>
+                              
+                            </ul>
+                            <div class="flex flex-col items-center gap-3 pt-10 justify-center">
+                                <button class="px-6 py-2 bg-primary hover:bg-spotSubtle hover:text-primary text-lg  font-semibold text-white rounded-full w-60">Copy Link</button>
+                                <button class="px-6 py-2 text-lg border hover:bg-primary hover:text-white border-primary font-semibold text-primary rounded-full w-60">Kembali ke Arsip</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!-- main layout end -->
+        </main>
+    </section>
+
+    </div>
+
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+
+    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="../node_modules/dropify/dist/js/dropify.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // $("#popUp").click(function (e) {
+            //     e.preventDefault();
+            //     $("#showPop").attr("class", "block");
+            // });
+            $('#headerSurat').dropify();
+            $('#footerSurat').dropify();
+            $('#headerReview').click(function (e) {
+                $('#fileHeader').click();
+                // console.log('ok')
+            })
+        })
+    </script>
+
+</body>
+
+</html>

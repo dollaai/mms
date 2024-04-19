@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suratan</title>
+
+    <!-- fonts google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- tailwind css -->
+    <link rel="stylesheet" href="../assets/dist/main.css">
+    <link rel="stylesheet" href="../assets/dist/style.css">
+
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- phospor -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <script src="//unpkg.com/alpinejs" defer></script>
+</head>
+
+<body class="bg-background">
+    <!-- nav -->
+    <nav class="px-10 py-6  fixed top-0 left-0 right-0  bg-white z-50" x-data="{openLog:false}">
+        <div class="w-full flex justify-between">
+
+            <div class="flex-1">
+                <div class="flex gap-x-32 flex-1">
+                    <div class="logo text-center ">
+                        <h1 class="text-3xl text-black font-bold">Suratan</h1>
+                    </div>
+                    <form action="">
+                        <div class="bg-blue-50 w-[400px] px-4 flex items-center rounded-lg">
+                            <label for="searchbar"><i class="ph ph-magnifying-glass  text-darkGrey"
+                                    style="font-size: 28px;"></i></label>
+                            <input type="search" name="searchbar" id="searchbar"
+                                class="w-full bg-blue-50 placeholder:text-darkGrey ps-3 h-10 focus:outline-none rounded-e-xl"
+                                placeholder="Search">
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="flex flex-col gap-3 justify-end relative">
+                <div class="flex items-center gap-3 justify-end">
+                    <div class="profile w-10 relative h-10 rounded-full bg-slate-400 bg-cover bg-center bg-no-repeat"
+                        style="background-image: url(https://source.unsplash.com/featured?profile);"></div>
+                    <div @click="openLog= !openLog" class="text-lg font-semibold flex justify-between items-center gap-1">Admin 
+                        <i class="fa fa-angle-down fa-xs"></i>
+                    </div>
+                    <!-- <ul x-show="" class="p-1 border -bottom-40 absolute border-line rounded-md w-40">
+                         <li><a href="#">Profil</a></li> 
+                        <li class="p-2 hover:bg-spotSubtle rounded-lg"><a href="#" class="block"><i class="fa-solid fa-arrow-right-from-bracket me-2"></i> Keluar</a></li>
+                    </ul> -->
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- nav end -->
+    <section class="flex relative ">
+        <!-- sidebar -->
+        <aside id="sidebar" class="w-[250px] py-6 px-6 bg-white ">
+          <div class="fixed ">
+
+               <div class="pt-20 h-[600px] overflow-auto scroll-side">
+                   <div class="pb-6 pt-3">
+                       <a href="buat-surat.html"
+                           class="block px-4 py-4 rounded-lg font-semibold hover:font-semibold  text-black bg-spotSubtle bg-opacity-10  hover:bg-opacity-50">
+                           <i class="fa-solid fa-paper-plane fa-lg me-2"></i>
+                           Buat Surat
+                       </a>
+                   </div>
+                   <h2 class="mb-4 text-sm font-bold">Menu</h2>
+                   <ul class="flex flex-col gap-3">
+                       <!-- <li>
+                           <a href="javascript:void(0)" id="arsip"
+                               class=" w-full block p-3 bg-primary text-white rounded-lg font-medium hover:bg-spotSubtle hover:bg-opacity-50 hover:text-black">
+                               <i class="fa-solid fa-box-archive fa-lg me-3"></i>
+                               Arsip</a>
+                               <ul id="subIndex" x-transition.duration.1000ms.origin.top.bottom class="mt-3 hidden transition duration-1000 ease-in-out">
+                                <li class="mb-3">
+                                    <a href="index.html" class="w-full block p-3  text-black rounded-lg font-medium hover:bg-primary hover:bg-opacity-5 hover:text-black">Surat Keluar</a>
+                                </li>
+                                <li class="mb-3">
+                                    <a href="surat-masuk.html" class="w-full block p-3  text-black rounded-lg font-medium hover:bg-primary hover:bg-opacity-5 hover:text-black">Surat Masuk</a>
+                                </li>
+                               </ul>
+                       </li> -->
+                       <li><a href="index.html" id="arsip"
+                        class=" w-full block p-3 bg-primary text-white rounded-lg font-semibold hover:bg-spotSubtle hover:bg-opacity-50 hover:text-black">
+                        <i class="fa-solid fa-envelopes-bulk fa-lg me-3"></i>
+                        Surat Keluar</a></li>
+                       <li><a href="surat-masuk.html" id="arsip"
+                        class=" w-full block p-3 text-black rounded-lg font-medium hover:bg-spotSubtle hover:bg-opacity-50 hover:text-black">
+                        <i class="fa-solid fa-box-archive fa-lg me-3"></i>
+                        Surat Masuk</a></li>
+                        <!--  <li>
+                           <a href="javascript:void(0)" id="templateToggle"
+                               class="block p-3 rounded-lg font-medium hover:bg-primary hover:bg-opacity-5">
+                               <i class="fa fa-brush fa-lg me-2"></i>
+                               Manajemen Template
+                           </a>
+                         <ul class="ml-6 hidden" id="templateSubmenu">
+                               <li class="mb-3">
+                                   <a class="block px-3 py-2  text-primary rounded-md font-semibold" href="kategori.html">Kategori</a>
+                               </li>
+                               <li class="mb-3">
+                                   <a class="block px-3 py-2  text-primary rounded-md font-semibold" href="header.html">Header</a>
+                               </li>
+                               <li class="mb-3">
+                                   <a class="block px-3 py-2  text-black rounded-md font-semibold" href="footer.html">Footer</a>
+                               </li>
+                           </ul>
+                       </li> -->
+                   
+                       <li>
+                           <a href="kategori.html"
+                               class="w-full block p-3  text-black rounded-lg font-semibold hover:bg-primary hover:bg-opacity-5 hover:text-black">
+                               <i class="fa fa-brush fa-lg me-2"></i>
+                               Template Kategori
+                           </a>
+                       </li>
+                       <li>
+                           <a href="template-header.html"
+                               class="block p-3 rounded-lg font-medium  hover:bg-primary hover:bg-opacity-5">
+                               <i class="fa fa-heading fa-lg me-2"></i>
+                               Template Header
+                           </a>
+                       </li>
+                       <li>
+                           <a href="template-footer.html"
+                               class="block p-3 rounded-lg font-medium  hover:bg-primary hover:bg-opacity-5">
+                               <i class="fa fa-f fa-lg me-2"></i>
+                               Template Footer
+                           </a>
+                       </li>
+                       <li>
+                           <a href="verifikator.html"
+                               class="block p-3 rounded-lg font-medium  hover:bg-primary hover:bg-opacity-5">
+                               <i class="fa-solid fa-fingerprint fa-lg me-2"></i>
+                               verifikator
+                           </a>
+                       </li>
+                       <li>
+                           <a href="penerima.html"
+                               class="block p-3 rounded-lg font-medium  hover:bg-primary hover:bg-opacity-5">
+                               <i class="fa fa-envelope-open fa-lg me-2"></i>
+                               Penerima
+                           </a>
+                       </li>
+                   </ul>
+                   <div>
+                    <h2 class="mb-4 mt-6 text-sm font-bold">Menu Administrator</h2>
+                    <ul class="flex flex-col gap-3 pb-20">
+                        <li>
+                            <a href="akun.html" class="w-full block p-3  text-black rounded-lg font-medium hover:bg-primary hover:bg-opacity-5 hover:text-black"><i class="fa fa-user fa-lg me-2"></i> Akun</a>
+                        </li>
+                        <li>
+                            <a href="ganti-password.html" class="w-full block p-3  text-black rounded-lg font-medium hover:bg-primary hover:bg-opacity-5 hover:text-black"><i class="fa fa-key fa-lg me-2"></i> Ganti Password</a>
+                        </li>
+                        <li>
+                            <a href="users.html" class="w-full block p-3  text-black rounded-lg font-medium hover:bg-primary hover:bg-opacity-5 hover:text-black"><i class="fa fa-users fa-lg me-2"></i>Akun Users</a>
+                        </li>
+                    </ul>
+                   </div>
+               </div>
+              
+          </div>
+        </aside>
+        <!-- end sidebar -->
+
+        <main class="flex-1 relative" x-data="{delete:false, popOpenDelete:false}">
+
+            <!-- main layout -->
+            <div class="penerima pt-28">
+                <div class="px-10 py-6 ">
+                    <div class="card-analistik grid grid-cols-3 gap-4">
+
+                        <div
+                            class="surat-keluar p-6 bg-white rounded-xl drop-shadow-md flex flex-row-reverse justify-between items-center">
+                            <div
+                                class="bg-spotSubtle p-1 rounded-full flex items-center justify-center w-[50px] h-[50px] mb-3">
+                                <i class="fa-solid fa-paper-plane fa-xl text-primary"></i>
+                            </div>
+                            <div>
+                                <div class="text-4xl font-bold">54</div>
+                                <div class="font-light opacity-50">Surat Terkirim</div>
+                            </div>
+                        </div>
+                        <div
+                            class="surat-ttd p-6 bg-white rounded-xl drop-shadow-md flex flex-row-reverse justify-between items-center">
+                            <div
+                                class="bg-spotSubtle p-1 rounded-full flex items-center justify-center w-[50px] h-[50px] mb-3">
+                                <i class="fa fa-pen-clip fa-xl text-primary"></i>
+                            </div>
+                            <div>
+                                <div class="text-4xl font-bold">24</div>
+                                <div class="font-light opacity-50">Kategori</div>
+                            </div>
+                        </div>
+                        <div
+                            class="surat-ttd p-6 bg-white rounded-xl drop-shadow-md flex flex-row-reverse justify-between items-center">
+                            <div
+                                class="bg-spotSubtle p-1 rounded-full flex items-center justify-center w-[50px] h-[50px] mb-3">
+                                <i class="fa fa-inbox fa-xl text-primary"></i>
+                            </div>
+                            <div>
+                                <div class="text-4xl font-bold">24</div>
+                                <div class="font-light opacity-50">Arsip</div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="py-6">
+                        <div class="p-3 bg-white rounded-xl drop-shadow-md">
+                            <div class="flex justify-between items-center">
+                                <button class="p-2 hover:bg-slate-200 rounded-full w-10 h-10"><i
+                                        class="fa-solid fa-arrow-rotate-right fa-md"></i></button>
+
+                                <div class="sort flex gap-3 items-center">
+                                    <div class="relative inline-block text-left" x-data="{filter:false}">
+                                        <div>
+                                            <button type="button" @click="filter=!filter"
+                                                class="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
+                                                id="menu-button" aria-expanded="true" aria-haspopup="true">
+                                                Terbaru
+                                                <svg class="-mr-1 h-5 w-5 text-gray-400" viewBox="0 0 20 20"
+                                                    fill="currentColor" aria-hidden="true">
+                                                    <path fill-rule="evenodd"
+                                                        d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+                                                        clip-rule="evenodd" />
+                                                </svg>
+                                            </button>
+                                        </div>
+                                        <div class="absolute right-0 z-10 mt-2 w-56  origin-top-right rounded-md bg-white shadow-lg ring-1 ring-line  focus:outline-none"
+                                            x-show="filter" @click.away="filter=false" role="menu" aria-orientation="vertical"
+                                            aria-labelledby="menu-button" tabindex="-1">
+                                            <div class="py-1" role="none">
+                                                <!-- Active: "bg-gray-100 text-gray-900", Not Active: "text-gray-700" -->
+                                                <a href="javascript:void(0)" class="text-gray-700 block px-4 py-2 text-sm"
+                                                    role="menuitem" tabindex="-1" id="menu-item-0">Terbaru</a>
+                                                <a href="javascript:void(0)"
+                                                    class="text-gray-700 block px-4 py-2 text-sm hover:bg-slate-100"
+                                                    role="menuitem" tabindex="-1" id="menu-item-1">Terlama</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <ul class="flex gap-6">
+                                        <li><a href="" class="p-2 hover:bg-slate-200 rounded-full w-10 h-10">
+                                                <i class="fa-solid fa-chevron-left fa-md"></i>
+                                            </a></li>
+                                        <li><a href="" class="p-2 hover:bg-slate-200 rounded-full w-10 h-10">
+                                                <i class="fa-solid fa-chevron-right fa-md"></i>
+                                            </a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <table class="w-full text-start table mt-6" id="style">
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th>Nomor Surat</th>
+                                        <th>Nama Penerima</th>
+                                        <th>Perihal Surat</th>
+                                        <th>Kategori</th>
+                                        <th>Status</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <input type="checkbox" name="" id="" class="w-full ">
+                                        </td>
+
+                                        <td class="font-bold text-blue-500">J/I/12/2023</td>
+                                        <td>
+                                            Luqmanul Hakim
+                                        </td>
+                                        <td>Pemberitahuan yang belum dibaca</td>
+                                        <td><span class="text-blue-500 bg-blue-100 py-1 px-2 rounded-lg">Magang</span></td>
+                                        <td>
+                                            <div
+                                                class="p-2 w-full text-center bg-teal-50 text-teal-500 font-semibold rounded-md text-xs">TTD</div>
+                                        </td>
+                                        <td>
+                                            <div class="relative" x-data="{open: false}">
+                                                <button id="popUp" x-on:click="open = ! open"
+                                                    class="flex justify-center gap-3 w-full items-center p-2 border rounded-lg">Actions
+                                                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                                                </button>
+                                                <div id="showPop" x-show="open" @click.away="open=false"
+                                                    class="rounded-lg  absolute z-20 right-0 bg-white mt-1 justify-center  w-40 border border-line">
+                                                    <a href="javascript:void(0)"
+                                                        class="py-2 px-4 hover:bg-primary cursor-pointer hover:bg-opacity-5 block ">Download</a>
+                                                
+                                                    <a href="javascript:void(0)"
+                                                        class="py-2 px-4 hover:bg-primary cursor-pointer hover:bg-opacity-5 block ">View</a>
+                                                    <a href="javascript:void(0)"
+                                                    @click="popOpenDelete= true"
+                                                        class="py-2 px-4 hover:bg-primary cursor-pointer hover:bg-opacity-5 block ">Hapus</a>
+                                                </div>
+                                            </div>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <input type="checkbox" name="" id="" class="w-full">
+                                        </td>
+
+                                        <td class="font-bold text-blue-500">J/II/12/2023</td>
+                                        <td>
+                                            Idola Aji Bayu Darma
+                                        </td>
+                                        <td>Pemberitahuan yang belum dibaca</td>
+                                        <td><span class="text-blue-500 bg-blue-100 py-1 px-2 rounded-lg">Magang</span></td>
+                                        <td>
+                                            <div
+                                                class="p-2 w-full text-center bg-primary bg-opacity-10 text-primary font-semibold rounded-md text-xs">Tidak TTD</div>
+                                        </td>
+                                        <td>
+                                            <div class="relative" x-data="{open: false}">
+                                                <button id="popUp" x-on:click="open = ! open"
+                                                    class="flex justify-center gap-3 w-full items-center p-2 border rounded-lg">Actions
+                                                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                                                </button>
+                                                <div id="showPop" x-show="open" @click.away="open=false"
+                                                    class="rounded-lg  absolute z-20 right-0 bg-white mt-1 justify-center  w-40 border border-line">
+                                                    <a href="javascript:void(0)"
+                                                        class="py-2 px-4 hover:bg-primary cursor-pointer hover:bg-opacity-5 block ">Download</a>
+                                                
+                                                    <a href="javascript:void(0)"
+                                                        class="py-2 px-4 hover:bg-primary cursor-pointer hover:bg-opacity-5 block ">View</a>
+                                                        <a href="javascript:void(0)"
+                                                        @click="popOpenDelete= true"
+                                                        class="py-2 px-4 hover:bg-primary cursor-pointer hover:bg-opacity-5 block ">Hapus</a>
+                                                </div>
+                                            </div>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <input type="checkbox" name="" id="" class="w-full">
+                                        </td>
+
+                                        <td class="font-bold text-primary">J/II/12/2023</td>
+                                        <td>
+                                            Asana
+                                        </td>
+                                        <td>Pemberitahuan yang belum dibaca</td>
+                                        <td><span class="px-2 py-1 rounded-lg bg-primary bg-opacity-10 text-primary">SPK</span></td>
+                                        <td>
+                                            <div
+                                            class="p-2 w-full text-center bg-teal-50 text-teal-500 font-semibold rounded-md text-xs">TTD</div>
+                                        </td>
+
+                                        <td>
+                                            <div class="relative" x-data="{open: false}">
+                                                <button id="popUp" x-on:click="open = ! open"
+                                                    class="flex justify-center gap-3 w-full items-center p-2 border rounded-lg">Actions
+                                                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                                                </button>
+                                                <div id="showPop" x-show="open" @click.away="open=false"
+                                                    class="rounded-lg  absolute z-20 right-0 bg-white mt-1 justify-center  w-40 border border-line">
+                                                    <a href="javascript:void(0)"
+                                                        class="py-2 px-4 hover:bg-primary cursor-pointer hover:bg-opacity-5 block ">Download</a>
+                                                
+                                                    <a href="javascript:void(0)"
+                                                        class="py-2 px-4 hover:bg-primary cursor-pointer hover:bg-opacity-5 block ">View</a>
+                                                        <a href="javascript:void(0)"
+                                                        @click="popOpenDelete= true"
+                                                        class="py-2 px-4 hover:bg-primary cursor-pointer hover:bg-opacity-5 block ">Hapus</a>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <input type="checkbox" name="" id="" class="w-full">
+                                        </td>
+
+                                        <td class="font-bold text-orange-500">J/II/12/2023</td>
+                                        <td>
+                                            Asana
+                                        </td>
+                                        <td>Pemberitahuan yang belum dibaca</td>
+                                        <td><span class="bg-orange-500 bg-opacity-10 text-orange-500 px-2 py-2 rounded-lg">BAST</span></td>
+                                        <td>
+                                            <div
+                                                class="p-2 w-full text-center bg-primary bg-opacity-10 text-xs text-primary font-semibold rounded-md">Tidak
+                                                TTD</div>
+                                        </td>
+
+                                        <td>
+                                            <div class="relative" x-data="{open: false}">
+                                                <button id="popUp" x-on:click="open = ! open" 
+                                                    class="flex justify-center gap-3 w-full items-center p-2 border rounded-lg">Actions
+                                                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                                                </button>
+                                                <div id="showPop" x-show="open" @click.away="open=false"
+                                                    class="rounded-lg  absolute z-20 right-0 bg-white mt-1 justify-center  w-40 border border-line">
+                                                    <a href="javascript:void(0)"
+                                                        class="py-2 px-4 hover:bg-primary cursor-pointer hover:bg-opacity-5 block ">Download</a>
+                                                
+                                                    <a href="javascript:void(0)"
+                                                        class="py-2 px-4 hover:bg-primary cursor-pointer hover:bg-opacity-5 block ">View</a>
+                                                        <a href="javascript:void(0)"
+                                                        @click="popOpenDelete= true"
+                                                        class="py-2 px-4 hover:bg-primary cursor-pointer hover:bg-opacity-5 block ">Hapus</a>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    
+
+                                </tbody>
+                            </table>
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+            <!-- main layout end -->
+            <!-- pop up delete -->
+            <div x-show="popOpenDelete"  @click.away="popOpenDelete=false">
+                <div x-show="popOpenDelete"  x-transition>
+                   
+                    <div class="absolute top-0 left-0 right-0 bottom-0 inset-0 bg-gray-500 opacity-75"></div>
+                </div>
+                <div x-show="popOpenDelete" x-transition.origin.bottom.duration.700ms
+                    class="bg-white absolute top-[200px] border border-line rounded-xl left-[350px] p-6 drop-shadow-md w-[300px] flex flex-col gap-3">
+                    <div class="flex flex-col gap-6 justify-center items-center">
+                        <div><i class="far fa-circle-xmark text-6xl text-primary"></i></div>
+                        <div class="text-center">
+                            <h3 class="text-2xl font-bold">Berhasil dihapus</h3>
+                            <p class="text-sm opacity-50">Penerima Berhasil dihapus</p>
+                        </div>
+                        <div><button @click="popOpenDelete= false" type="button"
+                                class="w-40 px-3 py-2 bg-primary rounded-xl text-white font-semibold">Oke</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- pop up delete end -->
+        </main>
+    </section>
+
+    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script>
+//         $('#arsip').click(function(){
+//   $("#subIndex").toggleClass("hidden")
+// })
+        // $("#popUp").click(function (e) {
+        //     e.preventDefault();
+        //     $("#showPop").attr("style", "display:block");
+        // });
+
+        // $('#templateToggle').click(function(){
+        //     // console.log('oke')
+        //     $('#templateSubmenu').removeClass('hidden');
+        //     $('#templateSubmenu').addClass('block')
+           
+        // })
+    </script>
+
+</body>
+
+</html>
